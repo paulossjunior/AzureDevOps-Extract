@@ -1,0 +1,13 @@
+version: '3.9'
+services:
+  extract:
+    container_name: azuredevops_extract
+    build: .
+    networks: 
+      - broker-kafka
+
+networks: 
+  broker-kafka:
+    name: infra
+    external: true        
+    driver: bridge  
